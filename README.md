@@ -131,7 +131,11 @@ The architecture follows AWS best practices by separating the web and database t
 
 ✅ Secure SSH Access from Web Tier to Database Tier
 
-🔄 Flask-to-Database Integration In Progress
+✅ Flask-to-MariaDB Integration Complete
+
+✅ Employee Records Successfully Stored in MariaDB
+
+✅ Employee Records Retrieved and Displayed in Flask Application
 
 ---
 
