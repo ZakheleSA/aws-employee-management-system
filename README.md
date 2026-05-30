@@ -1,5 +1,9 @@
 # AWS Employee Management System
 
+# Architecture Diagram
+
+![Architecture Diagram](screenshots/architecture-diagram.png)
+
 ## Project Overview
 
 This project demonstrates the design and implementation of a secure multi-tier web application architecture on AWS.
