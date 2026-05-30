@@ -1,71 +1,19 @@
-# AWS Employee Management System
+## Architecture Screenshots
 
-## Project Overview
+### VPC Overview
+![VPC Overview](screenshots/vpc-overview.png.png)
 
-This project demonstrates the design and implementation of a highly available 3-tier web application on AWS.
+### Subnets Overview
+![Subnets Overview](screenshots/subnets-overview.png)
 
-The goal is to deepen my understanding of:
+### Public Route Table
+![Public Route Table](screenshots/public-route-table.png)
 
-- AWS Networking
-- Compute
-- Storage
-- Databases
-- Security
-- Monitoring
+### Security Group Rules
+![Security Group Rules](screenshots/security-group-rules.png)
 
-## Architecture Components
+### EC2 Instance Running
+![EC2 Instance](screenshots/ec2-instance-running.png)
 
-### Networking
-- Custom VPC (10.0.0.0/16)
-- Public Subnets
-- Private Subnets
-- Internet Gateway
-- Route Tables
-
-### Compute
-- EC2 Instances
-- Auto Scaling Group
-- Application Load Balancer
-
-### Database
-- Amazon RDS MySQL
-
-### Storage
-- Amazon S3
-
-### Monitoring
-- Amazon CloudWatch
-- Amazon SNS
-
-## Project Progress
-
-### Completed
-- [x] Custom VPC
-- [x] Public Subnets
-- [x] Private Subnets
-- [x] Internet Gateway
-- [x] Public Route Table
-
-### In Progress
-- [ ] Security Groups
-- [ ] EC2 Instances
-- [ ] Load Balancer
-- [ ] RDS Database
-- [ ] S3 Storage
-- [ ] Monitoring
-
-## Lessons Learned
-
-### IAM Troubleshooting
-
-Issue:
-IAM user could not create VPC resources despite AdministratorAccess.
-
-Root Cause:
-An explicit deny was inherited through a user group policy.
-
-Resolution:
-Removed the user from the restricted group and used direct AdministratorAccess permissions.
-
-Key Lesson:
-Explicit Deny always overrides Allow permissions.
+### Website Hosted on EC2
+![Website Hosted on EC2](screenshots/website-live.png)
