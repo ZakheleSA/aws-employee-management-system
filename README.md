@@ -202,7 +202,7 @@ The architecture follows AWS best practices by separating the web and database t
 
 ## Web and Database Instances
 
-![Two EC2 Instances](screenshots/two-ec2-instances.png)
+![Two EC2 Instances](screenshots/two-ec2-instances-v2.png)
 
 ## Database Server Networking
 
