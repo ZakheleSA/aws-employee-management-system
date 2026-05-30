@@ -228,6 +228,10 @@ The architecture follows AWS best practices by separating the web and database t
 
 ![Employees Table](screenshots/employees-table-created.png)
 
+## Flask and MariaDB Integration
+
+![Flask MariaDB Integration](screenshots/flask-mariadb-integration.png)
+
 ---
 
 # Author
