@@ -2,100 +2,110 @@
 
 ## Project Overview
 
-This project demonstrates the design and implementation of a multi-tier web application architecture on AWS using custom networking, EC2 instances, security groups, and infrastructure best practices.
+This project demonstrates the design and implementation of a secure multi-tier web application architecture on AWS.
 
-The project currently consists of a functional web tier and an isolated database tier, with database integration planned as the next phase.
-
-The goal of this project is to gain hands-on experience with:
+The project was built to gain hands-on experience with:
 
 * AWS Networking
-* AWS Compute Services
-* Cloud Security
+* Compute Services
+* Security
 * Infrastructure Design
-* Database Architecture
+* Database Administration
 * Linux Administration
-* Web Application Hosting
-* Infrastructure Documentation
+* Cloud Architecture
+* GitHub Documentation
+
+The architecture follows AWS best practices by separating the web and database tiers into different subnets and securing communication through Security Groups.
 
 ---
 
-## Current Architecture
+# Architecture Overview
 
-### Presentation Layer (Web Tier)
+## Presentation Layer (Web Tier)
 
 * Amazon EC2 Web Server
 * Hosted in a Public Subnet
 * Public IPv4 Address Assigned
-* Flask Web Application Running
-* Security Group Allows HTTP (80), Flask (5000), and SSH (22)
+* Flask Web Application Hosted on EC2
+* Security Group allows:
 
-### Application Layer
+  * HTTP (80)
+  * SSH (22)
 
-* Planned for Future Implementation
-* Will Host Application Logic and APIs
-* Will Reside in a Private Subnet
+## Application Layer
 
-### Data Layer
+* Planned for future implementation
+* Will host application logic and APIs
+* Will reside in a Private Subnet
+
+## Data Layer
 
 * Dedicated Database EC2 Instance
 * Hosted in a Private Subnet
 * No Public IP Address
-* Isolated from the Internet
-* MySQL Port (3306) Restricted to the Web Tier Security Group
+* MariaDB Installed
+* Employee Database Created
+* Database access restricted through Security Groups
 
 ---
 
-## AWS Services Used
+# AWS Services Used
 
 * Amazon VPC
 * Amazon EC2
+* Amazon Linux 2023
 * Security Groups
 * Internet Gateway
+* NAT Gateway
 * Route Tables
 * Public Subnets
 * Private Subnets
 * Network ACLs
-* Amazon Linux 2023
+* Elastic IP Addresses
+* MariaDB
 
 ---
 
-## Skills Demonstrated
+# Skills Demonstrated
 
 * VPC Design and Configuration
 * Public and Private Subnet Architecture
-* Route Table Configuration
 * Security Group Management
-* EC2 Deployment
+* Route Table Configuration
+* Internet Gateway Configuration
+* NAT Gateway Deployment
+* EC2 Deployment and Administration
 * Linux Administration
-* Flask Application Deployment
-* Web Server Hosting
+* SSH Bastion / Jump Host Access
 * Database Tier Isolation
+* MariaDB Installation and Configuration
+* Web Application Hosting
 * Infrastructure Documentation
 * GitHub Project Documentation
 
 ---
 
-## Network Architecture
+# Network Architecture
 
-| Component        | Configuration                    |
-| ---------------- | -------------------------------- |
-| VPC              | 10.0.0.0/16                      |
-| Public Subnet    | 10.0.1.0/24                      |
-| Private Subnet A | 10.0.3.0/24                      |
-| Internet Gateway | Attached                         |
-| Route Table      | Public Internet Route Configured |
-| Web Server       | employee-web-1                   |
-| Database Server  | employee-db-1                    |
+| Component        | Configuration  |
+| ---------------- | -------------- |
+| VPC              | 10.0.0.0/16    |
+| Public Subnet    | 10.0.1.0/24    |
+| Private Subnet   | 10.0.3.0/24    |
+| Internet Gateway | Attached       |
+| NAT Gateway      | Configured     |
+| Web Server       | employee-web-1 |
+| Database Server  | employee-db-1  |
+| Database         | employee_db    |
+| Database Engine  | MariaDB 10.5   |
 
 ---
 
-## Current Status
+# Current Status
 
 ✅ Custom VPC Created
 
-✅ Public Subnet Created
-
-✅ Private Subnet Created
+✅ Public and Private Subnets Configured
 
 ✅ Internet Gateway Attached
 
@@ -103,54 +113,60 @@ The goal of this project is to gain hands-on experience with:
 
 ✅ Security Groups Configured
 
-✅ EC2 Web Server Deployed
+✅ Web Server Deployed (employee-web-1)
 
-✅ EC2 Database Server Deployed
+✅ Database Server Deployed (employee-db-1)
 
 ✅ Flask Application Running on EC2
 
-✅ Public Access to Web Tier Verified
+✅ NAT Gateway Configured
 
-🔄 Database Connectivity Testing In Progress
+✅ Private Subnet Internet Access Configured
 
-⏳ MySQL Installation Pending
+✅ MariaDB Installed on Database Server
 
-⏳ Database Integration Pending
+✅ employee_db Database Created
+
+✅ employees Table Created
+
+✅ Secure SSH Access from Web Tier to Database Tier
+
+🔄 Flask-to-Database Integration In Progress
 
 ---
 
-## Future Improvements
+# Future Improvements
 
-### Phase 2 – Database Integration
+## Phase 3 – Application Integration
 
-* Install MySQL on employee-db-1
-* Create Employee Database
-* Connect Web Tier to Database Tier
-* Store Employee Records in MySQL
+* Connect Flask Application to MariaDB
+* Create Employee Registration Form
+* Store Employee Records in Database
+* Retrieve Employee Records from Database
 
-### Phase 3 – Scalability
+## Phase 4 – High Availability
 
 * Deploy Application Load Balancer
 * Deploy Auto Scaling Group
 * Create Launch Templates
 
-### Phase 4 – Managed Database Services
+## Phase 5 – Managed Database
 
 * Migrate Database Tier to Amazon RDS
 * Implement Multi-AZ Architecture
 * Enable Automated Backups
 
-### Phase 5 – Monitoring and Observability
+## Phase 6 – Monitoring
 
-* Configure Amazon CloudWatch
+* Configure CloudWatch Monitoring
 * Create CloudWatch Dashboards
 * Configure SNS Alerts
 
-### Phase 6 – Production Readiness
+## Phase 7 – Production Readiness
 
 * Register Custom Domain
-* Configure Amazon Route 53
-* Enable HTTPS with AWS Certificate Manager
+* Configure Route 53
+* Enable HTTPS using AWS Certificate Manager
 
 ---
 
@@ -182,7 +198,7 @@ The goal of this project is to gain hands-on experience with:
 
 ## Web and Database Instances
 
-![Two EC2 Instances](screenshots/two-ec2-instances-v2.png)
+![Two EC2 Instances](screenshots/two-ec2-instances.png)
 
 ## Database Server Networking
 
@@ -195,3 +211,29 @@ The goal of this project is to gain hands-on experience with:
 ## Flask Application Running
 
 ![Flask Application](screenshots/flask-app-running.png)
+
+## NAT Gateway
+
+![NAT Gateway](screenshots/nat-gateway.png)
+
+## Private Route Table with NAT Gateway
+
+![Private Route Table](screenshots/private-route-table-nat.png)
+
+## Database Created
+
+![Database Created](screenshots/employee-db-created.png)
+
+## Employees Table Created
+
+![Employees Table](screenshots/employees-table-created.png)
+
+---
+
+# Author
+
+**Zakhele Sibande**
+
+AWS Cloud & Infrastructure Portfolio Project
+
+Built to demonstrate practical AWS Solutions Architect and Cloud Engineering skills.
