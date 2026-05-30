@@ -138,3 +138,6 @@ The goal of this project is to gain hands-on experience with:
 
 ## Database Security Group
 ![Database Security](screenshots/employee-db-1-security.png)
+
+### Flask Application Running
+![Flask Application](screenshots/flask-app-running.png)
